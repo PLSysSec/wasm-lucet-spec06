@@ -33,6 +33,7 @@ libnsl/build/lib/libnsl.so.1: libnsl/build/lib/libnsl.so
 sfi-spectre-spec: libnsl/build/lib/libnsl.so.1
 	git clone git@github.com:PLSysSec/sfi-spectre-spec.git
 	cd sfi-spectre-spec && LD_LIBRARY_PATH="$(CURR_DIR)/libnsl/build/lib/" SPEC_INSTALL_NOCHECK=1 SPEC_FORCE_INSTALL=1 sh install.sh -f
+	cd sfi-spectre-spec/benchspec/CPU2006/450.soplex/data/ref/input && tar -zxvf data.tar.gz
 
 build_spec: /opt/wasi-sdk/bin/clang lucet/target/release/lucetc sfi-spectre-spec 
 	export LD_LIBRARY_PATH="$(CURR_DIR)/libnsl/build/lib/" && \
