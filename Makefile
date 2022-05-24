@@ -15,6 +15,7 @@ libnsl:
 
 lucet-spectre:
 	git clone https://github.com/bytecodealliance/lucet $@
+	cd $@ && git submodule update --init --recursive
 
 lucet/target/release/lucetc: lucet-spectre
 	cd lucet-spectre && cargo build --release
