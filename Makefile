@@ -17,7 +17,7 @@ lucet-spectre:
 	git clone https://github.com/bytecodealliance/lucet $@
 
 lucet/target/release/lucetc: lucet-spectre
-	cd lucet && cargo build --release
+	cd lucet-spectre && cargo build --release
 
 libnsl/build/lib/libnsl.so: libnsl
 	cd ./libnsl && \
